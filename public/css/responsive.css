@@ -1,0 +1,1293 @@
+/* ===== Mobile Tutor — site-wide responsive safeguards ===== */
+
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+
+.sd-toast,
+#sdToast {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+img,
+video,
+iframe,
+embed,
+object {
+  max-width: 100%;
+}
+
+table {
+  max-width: 100%;
+}
+
+pre,
+code {
+  max-width: 100%;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+/* Horizontal scroll for wide tables / grids */
+.td-schedule-calendar,
+.td-panel:has(.td-exams-table),
+.td-exams-table-wrap,
+.table-responsive,
+.sd-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.td-exams-table {
+  min-width: 520px;
+}
+
+/* Long text / URLs */
+.sd-page,
+.td-page,
+.auth-page {
+  overflow-x: clip;
+}
+
+.sd-page a,
+.td-page a,
+.sd-chat-bubble,
+.td-chat-bubble {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ===== Tablet (≤991px) ===== */
+@media (max-width: 991px) {
+  .container,
+  .container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Teacher — shared page chrome */
+  .td-page .td-page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .td-page .td-page-header .sd-btn-primary,
+  .td-page .td-page-header .sd-btn-outline,
+  .td-page .td-page-header .td-btn-create-course,
+  .td-page .td-page-header .td-btn-header {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-form-row:not(.td-form-row--assign),
+  .td-form-grid,
+  .td-settings-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .td-students-toolbar:not(.td-students-toolbar--course),
+  .td-exams-toolbar,
+  .td-assign-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .td-students-toolbar .sd-search,
+  .td-exams-toolbar .sd-search,
+  .td-assign-toolbar .sd-search {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .td-page .td-course-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .td-page .td-course-tab {
+    flex-shrink: 0;
+  }
+
+  .td-course-hero-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .td-course-hero-stats {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .td-course-hero-stat {
+    flex: 1 1 calc(50% - 1px);
+    min-width: 120px;
+  }
+
+  .td-modal-actions:not(.td-modal-actions--assign) {
+    flex-wrap: wrap;
+  }
+
+  .td-modal-actions:not(.td-modal-actions--assign) .sd-btn-primary,
+  .td-modal-actions:not(.td-modal-actions--assign) .sd-btn-outline {
+    flex: 1 1 auto;
+    min-width: 120px;
+    justify-content: center;
+  }
+
+  .td-chat-split-wrap {
+    min-height: calc(100dvh - var(--sd-header-h));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  :is(.td-page-messages, .sd-page-messages) .sd-main-wrap {
+    padding: 0;
+  }
+
+  .td-settings-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  .td-settings-tab {
+    flex-shrink: 0;
+  }
+
+  /* Student dashboard */
+  .sd-topbar-inner {
+    gap: 8px;
+  }
+
+  .sd-topbar-actions {
+    flex-shrink: 0;
+  }
+
+  .sd-profile-name {
+    max-width: 88px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sd-subject-tabs,
+  .sd-lesson-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sd-subject-tab,
+  .sd-lesson-tab {
+    flex-shrink: 0;
+  }
+
+  .sd-messages-content {
+    padding: 16px;
+  }
+
+  .sd-certificates-grid,
+  .sd-courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Auth — student & teacher profile setup */
+  .auth-student-setup-header,
+  .auth-teacher-setup-header {
+    padding: 16px 24px 10px;
+  }
+
+  .auth-student-setup-header .auth-brand,
+  .auth-teacher-setup-header .auth-brand {
+    font-size: 1.75rem;
+  }
+
+  .auth-student-setup-main,
+  .auth-teacher-setup-main {
+    padding: 4px 24px 32px;
+  }
+
+  /* Landing / public */
+  .navbar .navbar-collapse {
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+  }
+}
+
+/* ===== Mobile (≤575px) ===== */
+@media (max-width: 575px) {
+  .container,
+  .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .td-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .td-request-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .td-request-actions .sd-btn-primary,
+  .td-request-actions .sd-btn-outline {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .td-modal-actions:not(.td-modal-actions--assign) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-modal-actions:not(.td-modal-actions--assign) .sd-btn-primary,
+  .td-modal-actions:not(.td-modal-actions--assign) .sd-btn-outline {
+    width: 100%;
+    min-width: 0;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-students-toolbar--course {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-students-toolbar-divider {
+    display: none;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-students-toolbar--course .sd-filter-pills {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-students-toolbar--course .sd-filter-pill {
+    flex-shrink: 0;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-students-search {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-student-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 14px 14px;
+    text-align: start;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-student-profile,
+  :is(.td-page-course-detail, .td-page-students) .td-student-progress {
+    grid-column: 1 / -1;
+    width: auto;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-status-pill {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  :is(.td-page-course-detail, .td-page-students) .td-student-chevron {
+    display: none;
+  }
+
+  .td-page-course-detail .td-assign-summary--course {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .td-page-course-detail .td-assign-grid--course {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .td-page-course-detail .td-mini-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .td-page-course-detail .td-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-course-detail .td-content-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-course-detail .td-settings-grid--course {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-course-detail .td-form-row--settings {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-course-detail .td-danger-zone--course {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-page-course-detail .td-danger-zone--course .td-danger-actions {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .td-page-course-detail .td-upcoming-grid,
+  :is(.td-page-course-detail, .td-page-exams) .td-upcoming-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .td-page-exams .td-exams-page-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .td-page-exams .td-exams-analytics--page,
+  .td-page-exams .td-upcoming-grid--page {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-exams .td-exams-page-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-page-exams .td-exams-create-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-page-exams .td-exams-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-page-exams .td-exams-search {
+    max-width: none;
+  }
+
+  .td-page-assignments .td-assign-page-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .td-page-assignments .td-assign-page-stat-stack {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .td-page-assignments .td-assign-page-stat-mini {
+    flex: 1;
+  }
+
+  .td-page-assignments .td-assign-page-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .td-page-assignments .td-assign-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-assignments .td-assign-page-card,
+  .td-page-assignments .td-assign-page-card--draft {
+    min-height: auto;
+  }
+
+  .td-page-assignments .td-assign-section-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .td-page-assignments .td-assign-page-card-date {
+    white-space: normal;
+  }
+
+  .td-page-assignments .td-review-panel {
+    position: static;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .td-page-assignments .td-review-panel-list {
+    max-height: min(440px, 58vh);
+  }
+
+  .td-page-assignments .td-submission-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .td-page-assignments .td-submission-file-box strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .td-page-assignments .td-assign-card-menu-popover {
+    left: auto;
+    right: 0;
+  }
+
+  .td-page-reviews .td-reviews-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .td-page-reviews .td-reviews-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .td-page-reviews .td-reviews-search {
+    max-width: none;
+    width: 100%;
+  }
+
+  .td-page-reviews .td-reviews-filters {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .td-page-reviews .td-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-reviews .td-review-card-head {
+    flex-wrap: wrap;
+  }
+
+  .sd-notifications-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sd-notify-mark-all--page {
+    justify-content: center;
+  }
+
+  .sd-notify-group-list .sd-notify-item--page {
+    grid-template-columns: auto 1fr;
+    padding: 14px 16px;
+  }
+
+  .sd-notify-item--page .sd-notify-item-meta {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    margin-top: 0;
+    gap: 8px;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-edit-form-row,
+  :is(.td-page-course-edit, .td-page-course-create) .td-pricing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-edit-section-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-edit-add-section {
+    width: 100%;
+    justify-content: center;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-upload-grid {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-level-pills--segment {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-level-pills--segment .td-level-pill {
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-level-pills--segment .td-level-pill:first-child {
+    border-top: none;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-pricing-tabs {
+    flex-direction: column;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-edit-footer {
+    flex-direction: column-reverse;
+  }
+
+  :is(.td-page-course-edit, .td-page-course-create) .td-edit-cancel,
+  :is(.td-page-course-edit, .td-page-course-create) .td-edit-save,
+  :is(.td-page-course-edit, .td-page-course-create) .td-create-publish,
+  :is(.td-page-course-edit, .td-page-course-create) .td-create-preview {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .td-page-account .td-account-section-head--split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-page-account .td-experience-add {
+    align-self: flex-start;
+  }
+
+  .td-page-account .td-profile-photo-edit {
+    margin-bottom: 4px;
+  }
+
+  .td-page-account .td-account-profile-grid,
+  .td-page-account .td-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-account .td-form-group--full {
+    max-width: 100%;
+  }
+
+  .td-page-account .td-account-section--experiences .td-account-footer--outside {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .td-page-account .td-account-section--experiences .td-account-footer--outside p {
+    text-align: right;
+    justify-self: stretch;
+    order: 1;
+  }
+
+  .td-page-account .td-account-section--experiences .td-account-footer--outside .td-account-footer-actions {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-page-account .td-account-section--experiences .td-account-footer--outside .td-account-footer-actions .sd-btn-primary,
+  .td-page-account .td-account-section--experiences .td-account-footer--outside .td-account-footer-actions .sd-btn-outline {
+    flex: 1;
+    justify-content: center;
+    max-width: 160px;
+  }
+
+  .td-page-account .td-account-section--experiences .td-account-footer--outside .td-account-cancel.sd-btn-outline {
+    max-width: 120px;
+  }
+
+  .td-page-account .td-account-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .td-page-account .td-account-footer-actions {
+    margin-inline-start: 0;
+    width: 100%;
+  }
+
+  .td-page-account .td-account-footer-actions .sd-btn-primary,
+  .td-page-account .td-account-footer-actions .sd-btn-outline {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .td-page-preferences .td-danger-zone--preferences .td-danger-zone-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-page-preferences .td-danger-zone--preferences .td-danger-actions {
+    margin-inline-start: 0;
+    width: 100%;
+  }
+
+  .td-page-preferences .td-danger-zone--preferences .td-danger-actions button {
+    flex: 1;
+  }
+
+  .td-page-schedule .td-schedule-bottom {
+    grid-template-columns: 1fr;
+    direction: rtl;
+  }
+
+  .td-page-schedule .td-schedule-bottom > * {
+    direction: rtl;
+  }
+
+  .td-page-schedule .td-hours-card {
+    min-height: 220px;
+  }
+
+  .td-page-schedule .td-schedule-grid {
+    min-width: 640px;
+  }
+
+  .td-course-hero-actions .sd-btn-primary,
+  .td-course-hero-actions .sd-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-course-hero-stat {
+    flex: 1 1 100%;
+  }
+
+  .td-page .td-page-header h1,
+  .td-page-intro h1 {
+    font-size: 1.15rem;
+  }
+
+  .td-page .td-course-tab {
+    min-width: 68px;
+    padding: 8px 12px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Assignments — mobile */
+  .td-page-assignments .td-assign-head h1 {
+    font-size: 1.1rem;
+  }
+
+  .td-page-assignments .td-assign-page-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .td-page-assignments .td-assign-page-stat {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .td-page-assignments .td-assign-page-stat-stack {
+    flex-direction: column;
+  }
+
+  .td-page-assignments .td-assign-page-card-metrics {
+    margin-top: 20px;
+  }
+
+  .td-page-assignments .td-assign-page-card-foot {
+    gap: 8px;
+  }
+
+  .td-page-assignments .td-assign-page-card-btn.sd-btn-primary {
+    padding: 10px 12px;
+    font-size: 0.7rem;
+  }
+
+  .td-page-assignments .td-submission-grade {
+    flex-wrap: wrap;
+  }
+
+  .td-page-assignments .td-submission-grade-field {
+    flex: 1 1 100%;
+  }
+
+  .td-page-assignments .td-submission-grade .sd-btn-primary,
+  .td-page-assignments .td-submission-grade .td-submission-save {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .td-page-assignments .td-review-panel-list {
+    max-height: min(380px, 52vh);
+  }
+
+  .td-page-assignments .td-review-panel-all.sd-btn-primary {
+    padding: 12px 14px;
+  }
+
+  .td-page-reviews .td-reviews-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .td-page-reviews .td-review-stat {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .td-page-reviews .td-review-card-foot {
+    flex-wrap: wrap;
+  }
+
+  .td-page-reviews .td-review-card-actions {
+    width: 100%;
+  }
+
+  .td-page-reviews .td-review-reply-btn.sd-btn-primary {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .td-student-row {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .td-help-banner-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .td-help-banner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-chat-compose-wrap {
+    padding: 12px 14px 14px;
+  }
+
+  .td-chat-compose {
+    border-radius: 999px;
+  }
+
+  .td-chat-compose input {
+    min-width: 0;
+    width: 100%;
+    flex: 1 1 100%;
+    order: -1;
+    padding: 4px 0;
+  }
+
+  /* Student */
+  .sd-profile-name {
+    display: none;
+  }
+
+  .sd-hero-stats:not(.sd-hero-stats--banner) {
+    width: 100%;
+    max-width: 300px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sd-hero-stats--banner {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 118px);
+    width: fit-content;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .sd-lesson-hero-inner {
+    padding: 18px 16px;
+  }
+
+  .sd-lesson-video-wrap {
+    border-radius: 12px;
+  }
+
+  .sd-exam-timer-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Auth */
+  .auth-shell {
+    padding: 16px 12px;
+  }
+
+  .auth-card,
+  .auth-select-card {
+    border-radius: 16px;
+  }
+
+  /* Landing */
+  .hero-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-buttons .hero-cta-btn,
+  .hero-cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Auth — student & teacher profile setup */
+  .auth-student-setup-header,
+  .auth-teacher-setup-header {
+    padding: 14px 16px 8px;
+  }
+
+  .auth-student-setup-header .auth-brand,
+  .auth-teacher-setup-header .auth-brand {
+    font-size: 1.5rem;
+  }
+
+  .auth-student-setup-header .auth-skip-btn,
+  .auth-teacher-setup-header .auth-skip-btn {
+    min-width: 72px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+
+  .auth-student-setup-main,
+  .auth-teacher-setup-main {
+    padding: 4px 16px 28px;
+  }
+
+  .auth-student-setup-title,
+  .auth-teacher-setup .auth-setup-title {
+    font-size: 1.05rem;
+  }
+
+  .auth-student-setup .auth-avatar-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .auth-teacher-setup .auth-upload-box--teacher {
+    min-height: 130px;
+  }
+
+  /* Course detail */
+  .td-page-course-detail .td-assign-next-foot {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    direction: ltr;
+  }
+
+  .td-page-course-detail .td-assign-next-btn {
+    width: auto;
+    text-align: center;
+  }
+
+  .td-page-course-detail .td-assign-next-avatars {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .td-page-course-detail .td-unit-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .td-page-course-detail .td-unit-tools {
+    margin-inline-start: auto;
+  }
+
+  .td-modal-dialog--assign {
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  .td-modal {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .td-student-panel-dialog {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: min(340px, calc(100vw - 16px));
+    border-radius: 0 0 0 16px;
+  }
+
+  .td-student-panel-dialog.is-scrollable {
+    max-height: calc(100dvh - 8px);
+  }
+
+  .td-modal-actions--assign {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .td-modal-actions--assign .td-assign-publish,
+  .td-modal-actions--assign .td-modal-cancel--assign {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===== Tablet — course overlays ===== */
+@media (max-width: 991px) {
+  .td-student-panel-dialog {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: min(340px, calc(100vw - 16px));
+    border-radius: 0 0 0 16px;
+  }
+
+  .td-student-panel-dialog.is-scrollable {
+    max-height: calc(100dvh - 8px);
+  }
+
+  .td-page-course-detail .td-exams-analytics--course,
+  :is(.td-page-course-detail, .td-page-exams) .td-exams-analytics--course {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "success"
+      "distribution";
+  }
+}
+
+/* ===== Very small screens (≤380px) ===== */
+@media (max-width: 380px) {
+  .td-students-stats,
+  .td-assign-page-stats,
+  .td-page-course-detail .td-mini-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sd-hero-stats:not(.sd-hero-stats--banner) {
+    width: 100%;
+    max-width: 300px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sd-hero-stats--banner {
+    grid-auto-flow: row;
+    grid-template-columns: 118px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .td-stat-card {
+    min-height: auto;
+  }
+
+  .sd-certificates-grid,
+  .sd-courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Site-wide responsive enhancements ===== */
+
+/* Horizontal scroll for filter pill rows */
+@media (max-width: 991px) {
+  .sd-filter-pills:not(.sd-filter-pills--wrap),
+  .td-courses-filters,
+  .td-reviews-filters,
+  .td-exams-filters,
+  .td-assign-filters,
+  .category-pills,
+  .pill-row {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 2px;
+  }
+
+  .sd-filter-pill,
+  .pill-btn,
+  .td-courses-filters .sd-filter-pill,
+  .td-reviews-filters .sd-filter-pill {
+    flex-shrink: 0;
+  }
+
+  /* Teacher profile */
+  .td-page-profile .td-profile-hero,
+  .td-profile-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  .td-page-profile .td-profile-hero-body,
+  .td-profile-hero-body {
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .td-page-profile .td-profile-hero-stats,
+  .td-profile-hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .td-page-profile .td-profile-hero-actions,
+  .td-profile-hero-actions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-self: center;
+  }
+
+  .td-page-profile .td-profile-quick-stats,
+  .td-profile-quick-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .td-page-profile .td-testimonial-grid,
+  .td-testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-profile .td-profile-cols,
+  .td-profile-cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* Settings & preferences */
+  .td-settings-grid,
+  .td-settings-grid-2,
+  .td-page-settings .td-form-row,
+  .td-page-preferences .td-form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Messages — mobile split (list ↔ chat) */
+  :is(.td-page-messages, .sd-page-messages) .td-chat-split-wrap {
+    grid-template-columns: 1fr;
+    min-height: calc(100dvh - var(--sd-header-h));
+  }
+
+  :is(.td-page-messages, .sd-page-messages) .td-chat-window {
+    display: none;
+  }
+
+  :is(.td-page-messages, .sd-page-messages).td-chat-open .td-chat-list-panel {
+    display: none;
+  }
+
+  :is(.td-page-messages, .sd-page-messages).td-chat-open .td-chat-window {
+    display: flex;
+  }
+
+  :is(.td-page-messages, .sd-page-messages) .td-chat-back {
+    display: inline-flex;
+  }
+
+  /* Public catalog */
+  .courses-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .courses-toolbar .category-pills {
+    justify-content: flex-start !important;
+  }
+
+  .courses-toolbar .search-box,
+  .courses-toolbar #searchInput {
+    width: 100%;
+    max-width: none;
+  }
+
+  .spec-layout,
+  .courses-layout {
+    flex-direction: column;
+  }
+
+  .spec-layout .filter-sidebar,
+  .courses-layout .filter-sidebar {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+
+  .courses-layout > .col-lg-3,
+  .courses-layout > .col-lg-9,
+  .spec-layout > .col-lg-3,
+  .spec-layout > .col-lg-9 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Checkout benefits */
+  .checkout-benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Teacher courses — 2 cols on tablet */
+  .td-courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Topbar compact */
+  .td-page .sd-topbar,
+  .sd-page .sd-topbar {
+    padding-inline: 12px;
+  }
+
+  .sd-topbar-end {
+    min-width: 0;
+  }
+
+  .sd-profile-wrap {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .checkout-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-promo-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checkout-promo-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .td-profile-hero {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .td-profile-hero-body h1 {
+    font-size: 1.15rem;
+  }
+
+  .td-profile-hero-actions .sd-btn-primary,
+  .td-profile-hero-actions .sd-btn-outline,
+  .td-profile-hero-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .td-profile-quick-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .td-profile-section {
+    padding: 18px 16px;
+  }
+
+  .td-report-card {
+    padding: 16px;
+  }
+
+  .td-courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-page-courses .td-courses-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .checkout-pay-method {
+    min-width: calc(50% - 6px);
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .checkout-complete-btn,
+  .checkout-promo-btn {
+    width: 100%;
+  }
+
+  .auth-submit-btn,
+  .auth-google-btn,
+  .auth-role-card .auth-submit-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .auth-role-cards {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .nf-card {
+    padding: 28px 20px;
+  }
+
+  .nf-code {
+    font-size: 3rem;
+  }
+
+  /* Prevent wide grids from overflowing */
+  .td-students-list,
+  .td-reviews-grid,
+  .td-assign-page-grid,
+  .sd-notifications-list {
+    min-width: 0;
+  }
+
+  .td-page .sd-content,
+  .sd-page .sd-content {
+    padding-inline: 12px;
+    gap: 20px;
+  }
+
+  .sd-promo-inner {
+    padding: 20px 16px;
+  }
+
+  .sd-promo-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sd-promo-actions .sd-btn-primary,
+  .sd-promo-actions .sd-btn-outline-light,
+  .sd-promo-actions .sd-btn-promo {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .checkout-pay-method {
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .td-stats-row {
+    grid-template-columns: 1fr;
+  }
+}
